@@ -29,3 +29,7 @@ button{
     width: 200px;
     height: 40px;
 }
+.flexElements{
+    display: flex;
+    border: 1px solid black;
+}
