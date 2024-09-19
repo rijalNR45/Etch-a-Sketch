@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(250, 214, 214);
+}
+.main-header{
+    text-align: center;
+    font-size: 6vw;
+    color: rgb(49, 47, 47);
+    margin: 0;
+}
+.main-container{
+    margin: 90px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8.5vw;
+}
+.sketch-pad{
+    width: 550px;
+    height: 550px;
+    border:solid 2px rgb(52, 40, 161);
+}
+.UI{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    
+}
+button{
+    width: 200px;
+    height: 40px;
+}
