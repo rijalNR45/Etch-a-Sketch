@@ -8,3 +8,6 @@ checker.addEventListener('click', () =>{
 const sketchArea = document.querySelector(".sketch-pad");
 const smallDivs = document.createElement("div");
 
+for(let i = 0; i<5; i++){
+    sketchArea.appendChild("smallDivs");
+}
