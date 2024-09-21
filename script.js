@@ -19,10 +19,18 @@ for(let i = 0; i < userInput*userInput; i++){
     tinyBox.style.height = `${boxSize}px`;
     sketchArea.appendChild(tinyBox);
 }
-// var smallDivsForColor = document.querySelector(".smallDivs");
-//     smallDivsForColor.addEventListener('click', () =>{
-//     smallDivsForColor.classList.add("coloredDivs");
-
-// });
-
+ const smallDivsForColor = document.querySelectorAll(".smallDivs");
+ smallDivsForColor.forEach(div => {
+    div.addEventListener('click', () =>{
+        div.classList.add("coloredDivs");
+        
+    })
+    div.addEventListener('mouseenter', () =>{
+        div.classList.add("coloredDivs");
+    })
+    div.addEventListener('mouseleave', () =>{
+        div.classList.add("coloredDivs");
+    })
+});
 };
+
