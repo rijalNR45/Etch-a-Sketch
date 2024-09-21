@@ -33,3 +33,10 @@ button{
     display: flex;
     border: 1px solid black;
 }
+.sketchArea{
+    display: flex;
+
+}
+.smallDivs{
+    border: 2px solid black;
+}
