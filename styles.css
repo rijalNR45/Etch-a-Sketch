@@ -10,7 +10,7 @@ body{
 .main-container{
     margin: 90px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     gap: 8.5vw;
 }
 .sketch-pad{
