@@ -1,11 +1,37 @@
+//slider
+const slider = document.getElementById('slider');
+const sliderValue = document.getElementById('sliderValue');
+
+sliderValue.textContent = slider.value;
+var userInput;
+slider.addEventListener('input', function() {
+  userInput = slider.value;
+  sliderValue.textContent = slider.value;
+});
+
+
+//colorpicker
+const colorPicker = document.getElementById('colorPicker');
+const coloredDiv = document.getElementById('coloredDiv');
+
+  colorPicker.addEventListener('input', function() {
+    coloredDiv.style.backgroundColor = colorPicker.value;
+  });
+
+
 const checker = document.getElementById("test");
-let userInput = null;
+
 checker.addEventListener('click', () =>{
-    userInput = document.querySelector(".resolutionByUser").value;
+  
     console.log(userInput);
     generateBoxes();
+    fillingColorsToDivs();
+    //for eraser
+    const eraseBotton = document.getElementById("eraser");
+    eraseBotton.addEventListener('click',removingColorsFromDivs);  
+    const clearBotton = document.getElementById("bottonForClear");
+    clearBotton.addEventListener('click', clearColor);
 
-  
 })
 
 
@@ -24,52 +50,76 @@ for(let i = 0; i < userInput*userInput; i++){
 }
 
 };
-function fillingColorsToDivs(){
- const smallDivsForColor = document.querySelectorAll(".smallDivs");
+function fillingColorsToDivs() {
+  const smallDivsForColor = document.querySelectorAll(".smallDivs");
 
- smallDivsForColor.forEach(div => {
-    div.addEventListener('click', () =>{
-        div.classList.add("coloredDivs");
+  let isMouseDown = false;
+
+  // Mousedown and mouseup event at the document level to track mouse state
+  document.addEventListener('mousedown', () => {
+    isMouseDown = true;
+  });
+  
+  document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  smallDivsForColor.forEach(div => {
+    // Click event for adding the colored class
+    div.addEventListener('click', () => {
+    div.style.backgroundColor = colorPicker.value;
+      //div.classList.add("coloredDivs");
+    });
+
+    // Mouseover event to check if both conditions are true
+    div.addEventListener('mouseover', () => {
+      if (isMouseDown) {
+    div.style.backgroundColor = colorPicker.value;
         
-    })
+      }
+    });
+  });
+};
 
-    let isMouseOver = false;
-    let isMouseDown = false;
-    smallDivsForColor.forEach(div =>{
-        div.addEventListener('mouseover', function() {
-            isMouseOver = true;
-            checkCombinedEvent();
-          });
-          
-          // Mouseout event to reset flag when the mouse leaves the div
-          div.addEventListener('mouseout', function() {
-            isMouseOver = false;
-          });
-          
-          // Mousedown event
-          div.addEventListener('mousedown', function() {
-            isMouseDown = true;
-            checkCombinedEvent();
-          });
-          
-          // Mouseup event to reset flag when the mouse button is released
-          div.addEventListener('mouseup', function() {
-            isMouseDown = false;
-          });
-          
-          // Function to check if both conditions are true
-          function checkCombinedEvent() {
-            if (isMouseOver && isMouseDown) {
-                div.classList.add("coloredDivs");
-              
-            }
-          }
+//eraser
+function removingColorsFromDivs() {
+  const smallDivsForColor = document.querySelectorAll(".smallDivs");
 
-    })
-    // Mouseover event
-   
+  let isMouseDown = false;
+
+  // Mousedown and mouseup event at the document level to track mouse state
+  document.addEventListener('mousedown', () => {
+    isMouseDown = true;
+  });
+  
+  document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  smallDivsForColor.forEach(div => {
+    // Click event for adding the colored class
+    div.addEventListener('click', () => {
+    div.style.backgroundColor = 'rgb(250, 214, 214)';
+      
+    });
+
+    // Mouseover event to check if both conditions are true
+    div.addEventListener('mouseover', () => {
+      if (isMouseDown) {
+    div.style.backgroundColor = 'rgb(250, 214, 214)';
+        
+      }
+    });
+  });
+};
+function clearColor(){
+  
+  const smallDivsForColor = document.querySelectorAll(".smallDivs");
+  smallDivsForColor.forEach(div =>{
+
+    div.style.backgroundColor = 'rgb(250, 214, 214)';
+  })
+  };
     
 
-});
-};
 

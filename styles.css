@@ -22,7 +22,7 @@ body{
 }
 .smallDivs{
     box-sizing: border-box;
-    border: 0.1px solid black;
+   
 }
 .UI{
     display: flex;
