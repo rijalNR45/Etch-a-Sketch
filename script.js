@@ -3,7 +3,7 @@ const slider = document.getElementById('slider');
 const sliderValue = document.getElementById('sliderValue');
 
 sliderValue.textContent = slider.value;
-var userInput;
+var userInput = 40;
 slider.addEventListener('input', function() {
   userInput = slider.value;
   sliderValue.textContent = slider.value;

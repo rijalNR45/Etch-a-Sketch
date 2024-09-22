@@ -11,7 +11,7 @@
     <div class="main-container">
     <div class="UI">
         <div class="color-selector">
-            <label for="colorPicker">Choose a color:</label>
+            <label for="colorPicker"><h3 class="texts">Choose a color:</h3></label>
             <input type="color" id="colorPicker" name="colorPicker" value="#ff0000">
             <div id="coloredDiv" style="width: 100px; height: 100px; border: 1px solid black; border-radius: 100px;; ">
         </div>
@@ -19,17 +19,16 @@
 
         </div>
         
-        <button id="eraser">Eraser</button>
-        <button id="bottonForClear">Clear</button>
-        <div class="grid-size"><input type="number" id="numberInput" class="resolutionByUser" min="1" max="100">
-        </div>
+        <button id="eraser" class="buttonStyle">Eraser</button>
+        <button id="bottonForClear" class="buttonStyle">Clear</button>
+        
         <div class="scroller">
-            <p>Current Value: <span id="sliderValue">40 x 40</span></p>
-            <label for="slider">Choose a value:</label>
+            <p class="texts">Current Value: <span id="sliderValue">40</span></p>
+            <label for="slider"><h3 class="texts">Choose a value:</h3></label>
             <input type="range" id="slider" name="slider" min="1" max="80" value="40">
 
         </div>
-        <button id="test">OKAY</button>
+        <button id="test" class="buttonStyle">OKAY</button>
         </div>
     <div class="sketch-pad"></div>
     </div>

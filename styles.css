@@ -31,10 +31,6 @@ body{
 
     
 }
-button{
-    width: 200px;
-    height: 40px;
-}
 .flexElements{
     display: flex;
     border: 1px solid black;
@@ -46,3 +42,19 @@ button{
 .coloredDivs{
     background-color: red;
 }
+.buttonStyle{
+    width: 200px;
+    height: 40px;
+    background-color: rgb(12, 12, 104);
+    color: bisque;
+    font-size: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.buttonStyle:hover{
+    transform: scale(1.03);
+
+ }
+.texts{
+    font-weight: 600;
+} 
