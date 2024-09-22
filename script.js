@@ -5,7 +5,10 @@ checker.addEventListener('click', () =>{
     console.log(userInput);
     generateBoxes();
 
+  
 })
+
+
 function generateBoxes(){
 const sketchArea = document.querySelector(".sketch-pad");
 sketchArea.innerHTML = '';
@@ -19,17 +22,20 @@ for(let i = 0; i < userInput*userInput; i++){
     tinyBox.style.height = `${boxSize}px`;
     sketchArea.appendChild(tinyBox);
 }
+
+};
+function fillingColorsToDivs(){
  const smallDivsForColor = document.querySelectorAll(".smallDivs");
+
  smallDivsForColor.forEach(div => {
     div.addEventListener('click', () =>{
         div.classList.add("coloredDivs");
         
     })
-    const myDiv = document.querySelectorAll('.smallDivs');
 
     let isMouseOver = false;
     let isMouseDown = false;
-    myDiv.forEach(div =>{
+    smallDivsForColor.forEach(div =>{
         div.addEventListener('mouseover', function() {
             isMouseOver = true;
             checkCombinedEvent();
@@ -54,8 +60,8 @@ for(let i = 0; i < userInput*userInput; i++){
           // Function to check if both conditions are true
           function checkCombinedEvent() {
             if (isMouseOver && isMouseDown) {
-              console.log('Mouse is over the div and mouse is down');
-              // You can add any action you want here
+                div.classList.add("coloredDivs");
+              
             }
           }
 
