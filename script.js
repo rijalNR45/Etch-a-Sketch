@@ -1,3 +1,7 @@
+//the code written here is not very efficient as it doesnot take advantage of the event
+//delegation property. That's why there is a good amount of redundent code. I might or might
+//not comeback again to improve the code for betterness and make it more effective.
+
 //slider
 const slider = document.getElementById('slider');
 const sliderValue = document.getElementById('sliderValue');
