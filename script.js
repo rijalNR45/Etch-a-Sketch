@@ -103,14 +103,14 @@ function removingColorsFromDivs() {
   smallDivsForColor.forEach(div => {
     // Click event for adding the colored class
     div.addEventListener('click', () => {
-    div.style.backgroundColor = 'rgb(250, 214, 214)';
+    div.style.backgroundColor = '#242424';
       
     });
 
     // Mouseover event to check if both conditions are true
     div.addEventListener('mouseover', () => {
       if (isMouseDown) {
-    div.style.backgroundColor = 'rgb(250, 214, 214)';
+    div.style.backgroundColor = '#242424';
         
       }
     });
@@ -121,7 +121,7 @@ function clearColor(){
   const smallDivsForColor = document.querySelectorAll(".smallDivs");
   smallDivsForColor.forEach(div =>{
 
-    div.style.backgroundColor = 'rgb(250, 214, 214)';
+    div.style.backgroundColor = '#242424';
   })
   };
     
