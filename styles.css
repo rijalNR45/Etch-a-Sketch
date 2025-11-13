@@ -1,60 +1,174 @@
-body{
-    background-color: rgb(250, 214, 214);
-}
-.main-header{
-    text-align: center;
-    font-size: 6vw;
-    color: rgb(49, 47, 47);
+body {
+    background-color: #1a1a1a;
     margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.main-container{
-    margin: 90px;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 8.5vw;
+
+.main-header {
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 30px 10px;
+    font-weight: 600;
 }
-.sketch-pad{
-    width: 550px;
-    height: 550px;
-    border:solid 2px rgb(52, 40, 161);
+
+.main-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1400px;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(30px, 5vw, 80px);
     flex-wrap: wrap;
 }
-.smallDivs{
-    box-sizing: border-box;
-   
+
+.sketch-pad {
+    width: min(550px, 90vw);
+    height: min(550px, 90vw);
+    max-width: 550px;
+    max-height: 550px;
+    border: 1px solid #404040;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #242424;
 }
-.UI{
+
+.smallDivs {
+    box-sizing: border-box;
+}
+
+.UI {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: clamp(18px, 2vw, 28px);
+    min-width: 280px;
+    width: min(320px, 90vw);
+    background-color: #242424;
+    padding: 30px;
+    border: 1px solid #404040;
+}
 
+.flexElements {
+    display: flex;
+    border: 1px solid #404040;
+    padding: 15px;
+    background-color: #2a2a2a;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sketchArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.coloredDivs {
+    background-color: #66bb6a;
+}
+
+.buttonStyle {
+    width: 100%;
+    max-width: 280px;
+    height: 50px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 500;
+    border: 1px solid #4a4a4a;
+    cursor: pointer;
+}
+
+.buttonStyle:active {
+    background-color: #404040;
+}
+
+.texts {
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 17px);
+    color: #b0b0b0;
+}
+
+/* Input styling */
+input[type="color"],
+input[type="number"],
+input[type="range"],
+input[type="date"] {
+    cursor: pointer;
+    border: 1px solid #404040;
+    padding: 5px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+input[type="number"],
+input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        margin: 20px 10px;
+    }
     
+    .UI {
+        width: 100%;
+        max-width: 450px;
+        padding: 25px;
+    }
+    
+    .sketch-pad {
+        width: min(450px, 90vw);
+        height: min(450px, 90vw);
+    }
 }
-.flexElements{
-    display: flex;
-    border: 1px solid black;
-}
-.sketchArea{
-    display: flex;
 
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+    .main-header {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+        padding: 20px 10px;
+    }
+    
+    .main-container {
+        padding: 10px;
+        gap: 25px;
+    }
+    
+    .sketch-pad {
+        width: min(350px, 95vw);
+        height: min(350px, 95vw);
+    }
+    
+    .UI {
+        width: 95vw;
+        padding: 20px;
+    }
+    
+    .buttonStyle {
+        height: 55px;
+        font-size: 16px;
+    }
+    
+    .flexElements {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
 }
-.coloredDivs{
-    background-color: red;
-}
-.buttonStyle{
-    width: 200px;
-    height: 40px;
-    background-color: rgb(12, 12, 104);
-    color: bisque;
-    font-size: 15px;
-    border-radius: 8px;
-    font-weight: 700;
-}
-.buttonStyle:hover{
-    transform: scale(1.03);
 
- }
-.texts{
-    font-weight: 600;
-} 
+* {
+    box-sizing: border-box;
+}
