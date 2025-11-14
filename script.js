@@ -121,9 +121,47 @@ function clearColor(){
   const smallDivsForColor = document.querySelectorAll(".smallDivs");
   smallDivsForColor.forEach(div =>{
 
-    div.style.backgroundColor = '#242424';
+    div.style.backgroundColor = '';
   })
   };
     
+//function to download canvas as image
 
+function downloadCanvas() {
+  const canvas = document.querySelector('.sketch-pad');
 
+  //create a temp canvas
+  const tempCanvas = document.createElement('canvas');
+  const ctx = tempCanvas.getContext('2d');
+
+  //set canvas size
+  tempCanvas.width = canvas.offsetWidth;
+  tempCanvas.height = canvas.offsetHeight;
+
+  //draw background color
+  ctx.fillStyle = '#242424'; 
+  ctx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+  //Get all colored divs
+  const divs = canvas.querySelectorAll('.smallDivs');
+  const gridSize = Math.sqrt(divs.length);
+  const cellWidth = tempCanvas.width / gridSize;
+  const cellHeight = tempCanvas.height / gridSize;
+
+  //draw each colored cell
+  divs.forEach((div, index) => {
+    const bgColor = window.getComputedStyle(div).backgroundColor;
+    if (bgColor &&bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
+            const row = Math.floor(index / gridSize);
+            const col = index % gridSize;
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(col * cellWidth, row * cellHeight, cellWidth, cellHeight);
+  }
+  });
+
+  //download
+  const link = document.createElement('a');
+  link.download = 'etch_a_sketch_image.png';
+  link.href = tempCanvas.toDataURL('image/png');
+  link.click();
+};
